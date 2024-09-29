@@ -4,32 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Harish Kumawat - Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    boxShadow: {
-                        'neu-out': '2px 2px 8px rgba(0,0,0,0.4), -3px -3px 8px rgba(255,255,255,0.8)',
-                        'neu-in': 'inset 2px 2px 8px rgba(0,0,0,0.4), inset -3px -3px 8px rgba(255,255,255,0.8)',
-                        'neu-out-secondary': '2px 2px 8px rgba(0,0,0,.8),-2px -2px 8px rgba(255,255,255,.2)',
-                        'neu-in-secondary':'inset 2px 2px 8px rgba(0,0,0,.8),inset -2px -2px 8px rgba(255,255,255,.2)'},
-                    colors:
-                    {
-                        'primary':"#ffffff",
-                        'secondary':'#3498db',
-                        'text':'#4b4d53',
-                        'secondarybg':'#323337', 
-                        'secondarytext':'#ffffff',                   }
-                }
-            }
-        }
-    </script>
 </head>
 <body class="bg-primary text-text">
-    <header class="fixed top-0 left-0 w-full bg-primary shadow-neu-out z-10">
-        <nav class="container mx-auto px-4 py-4">
+    <header class="fixed top-0 left-0 w-full bg-primary shadow-neu-out z-10 transition duration-300" id='navbar'>
+        <nav class="container mx-auto px-4 py-4" >
             <ul class="flex justify-center space-x-6 font-bold text-xl">
                 <li><a href="#home" class="hover:text-secondary transition duration-300">Home</a></li>
                 <li><a href="#skills" class="hover:text-secondary transition duration-300">Skills</a></li>
@@ -46,9 +25,11 @@
                     <h1 class="text-4xl md:text-6xl font-bold mb-4">
                         <span id="greeting">Good Morning</span>, I'm <span class="text-secondary">Harish Kumawat</span>
                     </h1>
-                    <p class="text-lg md:text-2xl mb-6">Electronics | IoT | Embedded | VLSI</p>
-                    <p class="text-lg mb-8">Passionate about creating innovative solutions in the world of electronics and technology.</p>
-	                <a href="#contact" class="bg-secondary font-bold text-white px-6 py-3 rounded-full shadow-neu-out hover:shadow-neu-in hover:text-black transition duration-200">Get in Touch</a>
+                    <p class="text-lg mb-4">Passionate about creating innovative solutions in the world of electronics adnd technology.</p>
+                    <!-- <p class="text-lg md:text-2xl mb-6">Specilizing in <span id="typedTextElm"></span></p> -->
+                    <p class="text-lg md:text-2xl mb-6">&nbsp;<span id="typedTextElm"></span></p>
+                    <a href="#contact" class="bg-secondary font-bold text-white px-6 py-3 rounded-full shadow-neu-out hover:shadow-neu-in hover:text-black transition duration-200">Get in Touch</a>
+
                 </div>
                 <div class="md:w-1/2 flex justify-center">
                     <div class="w-64 h-64 rounded-full shadow-neu-out overflow-hidden">
@@ -114,7 +95,7 @@
         <section id="contact" class="py-10 bg-secondarybg text-secondarytext">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-8">Get in Touch</h2>
-                <div class="max-w-2xl mx-auto bg-secondarybg p-8 rounded-lg shadow-neu-out-secondary">
+                <div class="max-w-2xl mx-auto bg-secondarybg p-8 rounded-lg shadow-neu-in-secondary">
                     <form>
                         <div class="mb-6">
                             <label for="name" class="block mb-2 font-semibold">Name</label>
@@ -131,19 +112,76 @@
                         <button type="submit" class="bg-secondarybg font-extrabold hover:text-white px-6 py-3 rounded-full shadow-neu-out-secondary hover:shadow-neu-in-secondary transition duration-200">Send Message</button>
                     </form>
                 </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-secondary text-white py-4">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2024 Harish Kumawat. All rights reserved.</p>
-            <div class="mt-2 space-x-4">
+                <div class="space-x-4 mx-auto flex justify-center mt-8">
                 <a href="#" class="text-white hover:text-text transition duration-300"><i class="fab fa-linkedin text-2xl"></i></a>
                 <a href="#" class="text-white hover:text-text transition duration-300"><i class="fab fa-github text-2xl"></i></a>
                 <a href="#" class="text-white hover:text-text transition duration-300"><i class="far fa-envelope text-2xl"></i></a>
             </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-secondary text-white py-2">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Harish Kumawat. All rights reserved.</p>
+            
         </div>
     </footer>
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    boxShadow: {
+                        'neu-out': '2px 2px 8px rgba(0,0,0,0.4), -3px -3px 8px rgba(255,255,255,0.8)',
+                        'neu-in': 'inset 2px 2px 8px rgba(0,0,0,0.4), inset -3px -3px 8px rgba(255,255,255,0.8)',
+                        'neu-out-secondary': '2px 2px 8px rgba(0,0,0,.8),-2px -2px 8px rgba(255,255,255,.2)',
+                        'neu-in-secondary':'inset 2px 2px 8px rgba(0,0,0,.8),inset -2px -2px 8px rgba(255,255,255,.2)'},
+                    colors:
+                    {
+                        'primary':"#ffffff",
+                        'secondary':'#3498db',
+                        'text':'#4b4d53',
+                        'secondarybg':'#323337', 
+                        'secondarytext':'#ffffff',                   }
+                }
+            }
+        }
+
+        // Electronics | Circuits | Embedded | VLSI
+        var typed = new Typed('#typedTextElm', {
+            strings: ['Electronics', 'Circuits','Embedded','VLSI',"Electronics ^200 | Circuits^200 | Embedded ^200| VLSI ^1000"],
+            typeSpeed: 40,
+            startDelay: 50 ,
+            backSpeed: 30,
+            backDelay: 800,
+            showCursor:true,
+            loop: true,
+            cursorChar:'_'
+        });
+        // scrol
+
+        let lastScrollTop = 0;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                navbar.classList.add('-translate-y-full');
+            } else {
+                // Scrolling up
+                navbar.classList.remove('-translate-y-full');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+    </script>
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
 </html>
